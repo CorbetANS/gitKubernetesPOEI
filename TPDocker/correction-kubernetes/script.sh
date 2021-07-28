@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# eval $(minikube docker-env)
+# docker build -t worker-app ../worker
+# docker build -t result-app ../result
+# docker build -t vote-app ../vote
 #Création du namespace
-# kubectl create namespace global-vote-app
+kubectl create namespace global-vote-app
 #Création des deployments
 deployments=("deployment-redis.yml","deployment-vote-app.yml","deployment-result-app.yml","deployment-worker-app.yml","deployment-postgres.yml") 
 for e in $deployments
